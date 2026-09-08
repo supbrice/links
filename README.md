@@ -14,8 +14,8 @@ Static Linktree-style page for [@supbrice](https://x.com/supbrice). Dark/light t
 
 Open `index.html` and change:
 
-1. **Name / bio / email** — in the `<header>` section near the top of `<main>`.
-2. **Social icons** — the `<nav aria-label="Social links">` block (each `<a>` is one icon).
+1. **Name / bio** — in the `<header>` section near the top of `<main>`.
+2. **Social icons** — the `<nav aria-label="Social links">` block (each `<a>` is one icon, including email).
 3. **Main links** — edit the JavaScript `links` array near the bottom:
 
 ```js
