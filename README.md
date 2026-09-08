@@ -20,12 +20,12 @@ Open `index.html` and change:
 
 ```js
 const links = [
-  { title: 'My New Link', url: 'https://example.com' },
+  { title: 'My New Link', url: 'https://example.com', icon: 'youtube' },
   // …
 ];
 ```
 
-Add, remove, or reorder objects — they render automatically.
+Add, remove, or reorder objects — they render automatically. Each item takes an `icon` key (`youtube`, `discord`, `apple-music`, `buymeacoffee`, `playstation`, `robinhood`, `church`, `briefcase`). Icons are inline monochrome SVGs (no extra CDN).
 
 4. **Avatar** — replace `web-pfp.png` (keep the same filename, or update the `<img src>`).
 
