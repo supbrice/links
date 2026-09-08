@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brice 💎 · Links</title>
+  <meta name="description" content="Building the future with faith. Passionate about tech, driven by Jesus." />
+  <meta property="og:title" content="Brice 💎 · Links" />
+  <meta property="og:description" content="Building the future with faith. Passionate about tech, driven by Jesus." />
+  <meta property="og:image" content="./web-pfp.png" />
+  <link rel="icon" href="./web-pfp.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            abyss: '#06080d',
+            graphite: '#0e131c',
+            steel: '#161d2a',
+            mist: '#94a3b8',
+            accent: '#3b82f6',
+          },
+          fontFamily: {
+            sans: ['Space Grotesk', 'sans-serif'],
+            mono: ['IBM Plex Mono', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+    html.light {
+      color-scheme: light;
+    }
+    body {
+      min-height: 100dvh;
+      font-family: 'Space Grotesk', sans-serif;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.18), transparent 55%),
+        radial-gradient(ellipse 60% 40% at 90% 80%, rgba(59, 130, 246, 0.08), transparent 50%),
+        radial-gradient(ellipse 50% 35% at 10% 60%, rgba(59, 130, 246, 0.06), transparent 45%),
+        linear-gradient(180deg, #05070c 0%, #090d14 45%, #05070b 100%);
+      color: #e2e8f0;
+      transition: background 0.35s ease, color 0.35s ease;
+    }
+    html.light body {
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.14), transparent 55%),
+        radial-gradient(ellipse 60% 40% at 90% 80%, rgba(59, 130, 246, 0.06), transparent 50%),
+        linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 45%, #f8fafc 100%);
+      color: #0f172a;
+    }
+    .glass-card {
+      background: rgba(14, 19, 28, 0.72);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      box-shadow:
+        0 0 0 1px rgba(59, 130, 246, 0.06),
+        0 24px 48px -12px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    html.light .glass-card {
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      box-shadow:
+        0 0 0 1px rgba(59, 130, 246, 0.08),
+        0 24px 48px -16px rgba(15, 23, 42, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    }
+    .link-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 0.9rem 1.25rem;
+      border-radius: 1rem;
+      background: linear-gradient(180deg, #161d2a 0%, #0e131c 100%);
+      border: 1px solid rgba(59, 130, 246, 0.22);
+      color: #e2e8f0;
+      font-weight: 500;
+      font-size: 0.95rem;
+      text-align: center;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    }
+    .link-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(59, 130, 246, 0.65);
+      box-shadow: 0 0 24px rgba(59, 130, 246, 0.28), 0 8px 20px rgba(0, 0, 0, 0.35);
+    }
+    .link-btn:active {
+      transform: translateY(0);
+    }
+    html.light .link-btn {
+      background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+      border: 1px solid rgba(59, 130, 246, 0.28);
+      color: #0f172a;
+    }
+    html.light .link-btn:hover {
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.22), 0 8px 16px rgba(15, 23, 42, 0.08);
+    }
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 0.75rem;
+      background: rgba(22, 29, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      color: #94a3b8;
+      transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    }
+    .social-icon:hover {
+      color: #3b82f6;
+      border-color: rgba(59, 130, 246, 0.5);
+      box-shadow: 0 0 16px rgba(59, 130, 246, 0.25);
+      transform: translateY(-1px);
+    }
+    html.light .social-icon {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: rgba(15, 23, 42, 0.1);
+      color: #64748b;
+    }
+    .theme-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 50;
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(14, 19, 28, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      color: #94a3b8;
+      backdrop-filter: blur(12px);
+      cursor: pointer;
+      transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .theme-toggle:hover {
+      color: #3b82f6;
+      border-color: rgba(59, 130, 246, 0.5);
+      box-shadow: 0 0 16px rgba(59, 130, 246, 0.2);
+    }
+    html.light .theme-toggle {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: rgba(15, 23, 42, 0.1);
+      color: #64748b;
+    }
+    .avatar-ring {
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.35), 0 0 28px rgba(59, 130, 246, 0.2);
+    }
+  </style>
+</head>
+<body class="antialiased">
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle light and dark mode" title="Toggle theme">
+    <svg id="icon-moon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+    </svg>
+    <svg id="icon-sun" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="4" />
+      <path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+    </svg>
+  </button>
+
+  <main class="relative z-10 mx-auto flex min-h-dvh max-w-md flex-col px-4 py-10 sm:px-6 sm:py-14">
+    <section class="glass-card rounded-3xl px-5 py-8 sm:px-7 sm:py-10">
+      <header class="flex flex-col items-center text-center">
+        <img
+          src="https://mango-ground-0a1d23510.7.azurestaticapps.net/web-pfp.png"
+          alt="Brice avatar"
+          width="112"
+          height="112"
+          class="avatar-ring h-28 w-28 rounded-full object-cover"
+        />
+        <h1 class="mt-5 text-2xl font-semibold tracking-tight sm:text-3xl">Brice 💎</h1>
+        <p class="mt-2 max-w-sm text-[0.95rem] leading-relaxed text-mist">
+          Building the future with faith. Passionate about tech, driven by Jesus. 💻🙏🏾
+        </p>
+        <p class="mt-3 max-w-sm font-mono text-xs leading-relaxed text-mist/80 sm:text-[0.8rem]">
+          We are Overflow Church. Our mission is to bring people who are far away from God, close to Him.
+        </p>
+        <a
+          href="mailto:supbricenow@gmail.com"
+          class="mt-3 font-mono text-sm text-accent hover:underline"
+        >supbricenow@gmail.com</a>
+      </header>
+
+      <!-- Social icons -->
+      <nav class="mt-7 flex flex-wrap items-center justify-center gap-2.5" aria-label="Social links">
+        <a class="social-icon" href="https://instagram.com/supbrice" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+        </a>
+        <a class="social-icon" href="https://x.com/supbrice" target="_blank" rel="noopener noreferrer" title="X" aria-label="X">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.227-8.651L1.25 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+        </a>
+        <a class="social-icon" href="https://www.threads.com/@supbrice" target="_blank" rel="noopener noreferrer" title="Threads" aria-label="Threads">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.97-6.334-1.97a.75.75 0 0 1 .812-1.26s2.274 1.54 5.53 1.55c3.256-.01 5.53-1.55 5.53-1.55a.75.75 0 0 1 .812 1.26s-2.753 1.946-6.343 1.97zm.007-4.5c-2.486 0-4.5-2.014-4.5-4.5V9.75a4.5 4.5 0 0 1 9 0v5.25c0 2.486-2.014 4.5-4.5 4.5zm0-1.5a3 3 0 0 0 3-3V9.75a3 3 0 0 0-6 0v5.25a3 3 0 0 0 3 3zM8.25 9.75a.75.75 0 0 1-1.5 0 5.25 5.25 0 0 1 10.5 0 .75.75 0 0 1-1.5 0 3.75 3.75 0 0 0-7.5 0z"/></svg>
+        </a>
+        <a class="social-icon" href="https://www.twitch.tv/supbrice" target="_blank" rel="noopener noreferrer" title="Twitch" aria-label="Twitch">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg>
+        </a>
+        <a class="social-icon" href="https://kick.com/supbrice" target="_blank" rel="noopener noreferrer" title="Kick" aria-label="Kick">
+          <span class="font-mono text-xs font-semibold tracking-tight">KICK</span>
+        </a>
+        <a class="social-icon" href="https://discord.gg/tFW36gZDKa" target="_blank" rel="noopener noreferrer" title="Discord" aria-label="Discord">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+        </a>
+        <a class="social-icon" href="https://cash.app/$supbrice" target="_blank" rel="noopener noreferrer" title="Cash App" aria-label="Cash App">
+          <span class="font-mono text-sm font-bold">$</span>
+        </a>
+        <a class="social-icon" href="mailto:supbricenow@gmail.com" title="Email" aria-label="Email">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </a>
+      </nav>
+
+      <!-- Main links (rendered from JS array) -->
+      <div id="links" class="mt-8 flex flex-col gap-3" role="list"></div>
+    </section>
+
+    <footer class="mt-8 pb-4 text-center font-mono text-xs text-mist/70">
+      © Brice · @supbrice
+    </footer>
+  </main>
+
+  <script>
+    const links = [
+      { title: 'Serve at Overflow', url: 'https://www.overflowchurch.us/serve?utm_source=ig&utm_medium=social&utm_content=link_in_bio' },
+      { title: 'Overflow Connect Groups', url: 'https://overflow-church.churchcenter.com/groups/ovf-connect-group-summer-szn-2026?enrollment=open_signup%2Crequest_to_join&filter=enrollment' },
+      { title: 'Overflow Church YouTube', url: 'https://www.youtube.com/@Overflowchurchhh?sub_confirmation=1' },
+      { title: "Today's Christian Music", url: 'https://music.apple.com/us/playlist/todays-christian/pl.fecfa8a26ea44ad581d4fe501892c8ff' },
+      { title: 'Buy Me Coffee ☕️', url: 'https://buymeacoffee.com/supbrice' },
+      { title: 'Let Al Apply to Jobs For You 🤓', url: 'https://sorce.jobs/referral?combinedName=Ngu%20Brice.0BC4CA' },
+      { title: 'PSN | bryzUSA', url: 'https://profile.playstation.com/bryzUSA' },
+      { title: 'Discord Community 🌍', url: 'https://discord.gg/tFW36gZDKa' },
+      { title: 'Reaction YT', url: 'https://www.youtube.com/@supbrice?sub_confirmation=1' },
+      { title: 'Tech YT', url: 'https://www.youtube.com/@ReviewswBryz?sub_confirmation=1' },
+      { title: '🇨🇲 237 USA', url: 'https://www.youtube.com/@237USA?sub_confirmation=1' },
+      { title: 'Get a Free Stock – Join Robinhood Now!', url: 'https://join.robinhood.com/ngubric-48af9b' },
+    ];
+
+    const container = document.getElementById('links');
+    links.forEach(({ title, url }) => {
+      const a = document.createElement('a');
+      a.href = url;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.className = 'link-btn';
+      a.textContent = title;
+      a.setAttribute('role', 'listitem');
+      container.appendChild(a);
+    });
+
+    // Theme: dark default; light via html.light
+    const root = document.documentElement;
+    const toggle = document.getElementById('theme-toggle');
+    const iconSun = document.getElementById('icon-sun');
+    const iconMoon = document.getElementById('icon-moon');
+
+    function applyTheme(mode) {
+      const isLight = mode === 'light';
+      root.classList.toggle('light', isLight);
+      root.classList.toggle('dark', !isLight);
+      iconSun.classList.toggle('hidden', isLight);
+      iconMoon.classList.toggle('hidden', !isLight);
+      try { localStorage.setItem('theme', mode); } catch (_) {}
+    }
+
+    let saved = 'dark';
+    try { saved = localStorage.getItem('theme') || 'dark'; } catch (_) {}
+    applyTheme(saved === 'light' ? 'light' : 'dark');
+
+    toggle.addEventListener('click', () => {
+      const next = root.classList.contains('light') ? 'dark' : 'light';
+      applyTheme(next);
+    });
+  </script>
+</body>
+</html>
