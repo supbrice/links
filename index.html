@@ -45,23 +45,134 @@
     body {
       min-height: 100dvh;
       font-family: 'Space Grotesk', sans-serif;
-      background:
-        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.18), transparent 55%),
-        radial-gradient(ellipse 60% 40% at 90% 80%, rgba(59, 130, 246, 0.08), transparent 50%),
-        radial-gradient(ellipse 50% 35% at 10% 60%, rgba(59, 130, 246, 0.06), transparent 45%),
-        linear-gradient(180deg, #05070c 0%, #090d14 45%, #05070b 100%);
+      background: #05070c;
       color: #e2e8f0;
       transition: background 0.35s ease, color 0.35s ease;
     }
     html.light body {
-      background:
-        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.14), transparent 55%),
-        radial-gradient(ellipse 60% 40% at 90% 80%, rgba(59, 130, 246, 0.06), transparent 50%),
-        linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 45%, #f8fafc 100%);
+      background: #f1f5f9;
       color: #0f172a;
     }
+    /* Ambient field: soft orbs + a slow wash. Motion is transform-only so it stays on the compositor. */
+    .ambient {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -12%, rgba(59, 130, 246, 0.16), transparent 58%),
+        linear-gradient(180deg, #05070c 0%, #090d14 48%, #05070b 100%);
+    }
+    html.light .ambient {
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -12%, rgba(59, 130, 246, 0.12), transparent 58%),
+        linear-gradient(180deg, #f8fafc 0%, #e8eef6 48%, #f1f5f9 100%);
+    }
+    .ambient-wash,
+    .orb {
+      position: absolute;
+      will-change: transform;
+    }
+    .ambient-wash {
+      left: -25%;
+      width: 150%;
+      top: -20%;
+      height: 78%;
+      background: linear-gradient(
+        118deg,
+        transparent 0%,
+        rgba(59, 130, 246, 0.14) 28%,
+        rgba(147, 197, 253, 0.08) 48%,
+        rgba(37, 99, 235, 0.12) 68%,
+        transparent 100%
+      );
+      animation: ambient-wash 46s ease-in-out infinite alternate;
+    }
+    html.light .ambient-wash {
+      background: linear-gradient(
+        118deg,
+        transparent 0%,
+        rgba(59, 130, 246, 0.16) 30%,
+        rgba(147, 197, 253, 0.22) 52%,
+        rgba(37, 99, 235, 0.1) 72%,
+        transparent 100%
+      );
+    }
+    .orb {
+      border-radius: 50%;
+    }
+    .orb-1 {
+      width: 62vmax;
+      height: 62vmax;
+      left: -18%;
+      top: -22%;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.42) 0%, rgba(59, 130, 246, 0.12) 42%, transparent 70%);
+      animation: drift-1 32s ease-in-out infinite alternate;
+    }
+    .orb-2 {
+      width: 52vmax;
+      height: 52vmax;
+      right: -16%;
+      bottom: -18%;
+      background: radial-gradient(circle, rgba(96, 165, 250, 0.28) 0%, rgba(59, 130, 246, 0.08) 46%, transparent 72%);
+      animation: drift-2 40s ease-in-out infinite alternate;
+    }
+    .orb-3 {
+      width: 38vmax;
+      height: 38vmax;
+      left: 8%;
+      bottom: 6%;
+      background: radial-gradient(circle, rgba(30, 64, 175, 0.45) 0%, rgba(37, 99, 235, 0.1) 48%, transparent 72%);
+      animation: drift-3 28s ease-in-out infinite alternate;
+    }
+    html.light .orb-1 {
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.28) 0%, rgba(59, 130, 246, 0.08) 46%, transparent 72%);
+    }
+    html.light .orb-2 {
+      background: radial-gradient(circle, rgba(147, 197, 253, 0.55) 0%, rgba(96, 165, 250, 0.12) 48%, transparent 72%);
+    }
+    html.light .orb-3 {
+      background: radial-gradient(circle, rgba(191, 219, 254, 0.7) 0%, rgba(59, 130, 246, 0.1) 50%, transparent 74%);
+    }
+    .ambient-vignette {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 38%, transparent 18%, rgba(5, 7, 12, 0.16) 68%, rgba(5, 7, 12, 0.5) 100%);
+    }
+    html.light .ambient-vignette {
+      background: radial-gradient(ellipse at 50% 38%, transparent 18%, rgba(241, 245, 249, 0.12) 68%, rgba(241, 245, 249, 0.55) 100%);
+    }
+    @keyframes ambient-wash {
+      from { transform: translate3d(-4%, -3%, 0); }
+      to { transform: translate3d(5%, 8%, 0); }
+    }
+    @keyframes drift-1 {
+      from { transform: translate3d(0, 0, 0) scale(1); }
+      to { transform: translate3d(10%, 14%, 0) scale(1.1); }
+    }
+    @keyframes drift-2 {
+      from { transform: translate3d(0, 0, 0) scale(1); }
+      to { transform: translate3d(-12%, -10%, 0) scale(1.14); }
+    }
+    @keyframes drift-3 {
+      from { transform: translate3d(0, 0, 0) scale(1); }
+      to { transform: translate3d(16%, -12%, 0) scale(0.92); }
+    }
+    @media (max-width: 640px) {
+      .orb-3 { display: none; }
+      .orb-1 { width: 88vw; height: 88vw; }
+      .orb-2 { width: 78vw; height: 78vw; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .ambient-wash,
+      .orb {
+        animation: none;
+        will-change: auto;
+      }
+    }
     .glass-card {
-      background: rgba(14, 19, 28, 0.72);
+      background: rgba(14, 19, 28, 0.84);
       border: 1px solid rgba(148, 163, 184, 0.12);
       box-shadow:
         0 0 0 1px rgba(59, 130, 246, 0.06),
@@ -71,12 +182,22 @@
       -webkit-backdrop-filter: blur(20px);
     }
     html.light .glass-card {
-      background: rgba(255, 255, 255, 0.78);
+      background: rgba(255, 255, 255, 0.88);
       border: 1px solid rgba(15, 23, 42, 0.08);
       box-shadow:
         0 0 0 1px rgba(59, 130, 246, 0.08),
         0 24px 48px -16px rgba(15, 23, 42, 0.12),
         inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    }
+    @media (max-width: 768px) {
+      .glass-card {
+        background: rgba(14, 19, 28, 0.94);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+      }
+      html.light .glass-card {
+        background: rgba(255, 255, 255, 0.94);
+      }
     }
     .link-btn {
       --brand: 59 130 246;
@@ -238,6 +359,14 @@
   </style>
 </head>
 <body class="antialiased">
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient-wash"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="ambient-vignette"></div>
+  </div>
+
   <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle light and dark mode" title="Toggle theme">
     <svg id="icon-moon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" aria-hidden="true">
       <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
