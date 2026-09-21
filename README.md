@@ -74,3 +74,4 @@ git push -u origin main
 - Default: dark (`html` has class `dark`).
 - Light mode: toggled via the button (top-right); adds `html.light` and persists in `localStorage`.
 - Colors / fonts live in the Tailwind CDN config and a small `<style>` block — match the Brice portfolio (abyss / graphite / steel / mist / accent, Space Grotesk + IBM Plex Mono).
+- Background is a CSS ambient field (drifting blue orbs and a slow wash) behind the existing card. `prefers-reduced-motion: reduce` freezes it to a static gradient. On small screens the third orb is omitted and the card skips backdrop blur so the animation stays light.
