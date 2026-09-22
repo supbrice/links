@@ -1,393 +1,249 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Brice · Links</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <meta name="description" content="🎂 34 | 🇨🇲 → 🇺🇸 Minnesota | 💻 Tech-minded. 🚀 Always evolving." />
   <meta property="og:title" content="Brice · Links" />
   <meta property="og:description" content="🎂 34 | 🇨🇲 → 🇺🇸 Minnesota | 💻 Tech-minded. 🚀 Always evolving." />
   <meta property="og:image" content="./web-pfp.png" />
   <link rel="icon" href="./web-pfp.png" type="image/png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Orbitron:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            abyss: '#06080d',
-            graphite: '#0e131c',
-            steel: '#161d2a',
-            mist: '#94a3b8',
-            accent: '#3b82f6',
-          },
-          fontFamily: {
-            sans: ['Space Grotesk', 'sans-serif'],
-            mono: ['IBM Plex Mono', 'monospace'],
-            display: ['Orbitron', 'sans-serif'],
-            bio: ['JetBrains Mono', 'monospace'],
-          },
-        },
-      },
-    };
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      color-scheme: dark;
-    }
-    html.light {
-      color-scheme: light;
-    }
+    :root { color-scheme: light; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
     body {
-      min-height: 100dvh;
-      font-family: 'Space Grotesk', sans-serif;
-      background: #05070c;
-      color: #e2e8f0;
-      transition: background 0.35s ease, color 0.35s ease;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #0b0b0f;
+      background: transparent;
+      -webkit-font-smoothing: antialiased;
     }
-    html.light body {
-      background: #f1f5f9;
-      color: #0f172a;
-    }
-    /* Ambient field: soft orbs + a slow wash. Motion is transform-only so it stays on the compositor. */
-    .ambient {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      overflow: hidden;
-      pointer-events: none;
-      background: linear-gradient(180deg, #05070c 0%, #090d14 48%, #05070b 100%);
-    }
-    html.light .ambient {
-      background: linear-gradient(180deg, #f8fafc 0%, #e8eef6 48%, #f1f5f9 100%);
-    }
-    .ambient-wash,
-    .orb {
-      position: absolute;
-      will-change: transform;
-    }
-    .ambient-wash {
-      left: -30%;
-      width: 160%;
-      top: -30%;
-      height: 90%;
-      background: linear-gradient(
-        115deg,
-        transparent 8%,
-        rgba(37, 99, 235, 0.22) 32%,
-        rgba(147, 197, 253, 0.14) 52%,
-        rgba(59, 130, 246, 0.24) 72%,
-        transparent 94%
-      );
-      animation: ambient-wash 16s linear infinite alternate;
-      animation-delay: -5s;
-    }
-    html.light .ambient-wash {
-      background: linear-gradient(
-        115deg,
-        transparent 8%,
-        rgba(59, 130, 246, 0.22) 30%,
-        rgba(191, 219, 254, 0.55) 52%,
-        rgba(96, 165, 250, 0.28) 74%,
-        transparent 94%
-      );
-    }
-    .orb {
-      border-radius: 50%;
-    }
-    .orb-1 {
-      width: 34vmax;
-      height: 34vmax;
-      left: -2%;
-      top: 4%;
-      background: radial-gradient(circle, rgba(59, 130, 246, 0.9) 0%, rgba(37, 99, 235, 0.32) 28%, transparent 58%);
-      animation: drift-1 14s linear infinite alternate;
-      animation-delay: -4s;
-    }
-    .orb-2 {
-      width: 30vmax;
-      height: 30vmax;
-      right: -2%;
-      bottom: 0;
-      background: radial-gradient(circle, rgba(147, 197, 253, 0.62) 0%, rgba(59, 130, 246, 0.18) 32%, transparent 60%);
-      animation: drift-2 16s linear infinite alternate;
-      animation-delay: -9s;
-    }
-    .orb-3 {
-      width: 22vmax;
-      height: 22vmax;
-      right: 8%;
-      top: 18%;
-      background: radial-gradient(circle, rgba(96, 165, 250, 0.7) 0%, rgba(29, 78, 216, 0.16) 34%, transparent 60%);
-      animation: drift-3 12s linear infinite alternate;
-      animation-delay: -3s;
-    }
-    html.light .orb-1 {
-      background: radial-gradient(circle, rgba(59, 130, 246, 0.42) 0%, rgba(59, 130, 246, 0.12) 38%, transparent 68%);
-    }
-    html.light .orb-2 {
-      background: radial-gradient(circle, rgba(147, 197, 253, 0.8) 0%, rgba(96, 165, 250, 0.2) 40%, transparent 70%);
-    }
-    html.light .orb-3 {
-      background: radial-gradient(circle, rgba(191, 219, 254, 0.9) 0%, rgba(59, 130, 246, 0.16) 44%, transparent 70%);
-    }
-    .ambient-vignette {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 50% 42%, transparent 28%, rgba(5, 7, 12, 0.18) 78%, rgba(5, 7, 12, 0.42) 100%);
-    }
-    html.light .ambient-vignette {
-      background: radial-gradient(ellipse at 50% 42%, transparent 30%, rgba(248, 250, 252, 0.1) 80%, rgba(241, 245, 249, 0.45) 100%);
-    }
-    @keyframes ambient-wash {
-      from { transform: translate3d(-10%, -4%, 0); }
-      to { transform: translate3d(10%, 12%, 0); }
-    }
-    @keyframes drift-1 {
-      from { transform: translate3d(0, 0, 0) scale(0.94); }
-      to { transform: translate3d(26vw, 22vh, 0) scale(1.16); }
-    }
-    @keyframes drift-2 {
-      from { transform: translate3d(0, 0, 0) scale(1); }
-      to { transform: translate3d(-24vw, -20vh, 0) scale(1.18); }
-    }
-    @keyframes drift-3 {
-      from { transform: translate3d(0, 0, 0) scale(0.9); }
-      to { transform: translate3d(-18vw, 24vh, 0) scale(1.2); }
-    }
-    @media (max-width: 640px) {
-      .orb-3 { display: none; }
-      .orb-1 { width: 80vw; height: 80vw; }
-      .orb-2 { width: 72vw; height: 72vw; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .ambient-wash,
-      .orb {
-        animation: none;
-        will-change: auto;
-      }
-    }
-    .glass-card {
-      background: rgba(14, 19, 28, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.12);
-      box-shadow:
-        0 0 0 1px rgba(59, 130, 246, 0.06),
-        0 24px 48px -12px rgba(0, 0, 0, 0.55),
-        inset 0 1px 0 rgba(255, 255, 255, 0.04);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-    }
-    html.light .glass-card {
-      background: rgba(255, 255, 255, 0.88);
-      border: 1px solid rgba(15, 23, 42, 0.08);
-      box-shadow:
-        0 0 0 1px rgba(59, 130, 246, 0.08),
-        0 24px 48px -16px rgba(15, 23, 42, 0.12),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9);
-    }
-    @media (max-width: 768px) {
-      .glass-card {
-        background: rgba(14, 19, 28, 0.94);
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
-      }
-      html.light .glass-card {
-        background: rgba(255, 255, 255, 0.94);
-      }
-    }
-    .link-btn {
-      --brand: 59 130 246;
-      --accent: color-mix(in srgb, rgb(var(--brand)) 78%, white);
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      padding: 0.9rem 2.85rem;
-      border-radius: 1rem;
+    .anim-bg {
+      position: fixed; inset: 0; z-index: -1; overflow: hidden;
       background:
-        linear-gradient(90deg, rgb(var(--brand) / 0.08), transparent 40%),
-        linear-gradient(180deg, #161d2a 0%, #0e131c 100%);
-      border: 1px solid rgb(var(--brand) / 0.28);
-      box-shadow: inset 3px 0 0 var(--accent);
-      color: #e2e8f0;
-      font-weight: 500;
-      font-size: 0.95rem;
+        radial-gradient(ellipse at 20% 10%, rgba(147,197,253,0.55), transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(196,181,253,0.5), transparent 45%),
+        radial-gradient(ellipse at 50% 90%, rgba(103,232,249,0.45), transparent 50%),
+        linear-gradient(135deg, #dbeafe 0%, #f5f3ff 45%, #ecfeff 100%);
+    }
+    .blob {
+      position: absolute; border-radius: 50%;
+      filter: blur(52px); opacity: 0.75;
+      animation: blobFloat 16s ease-in-out infinite;
+    }
+    .b1 { width: min(48vw,420px); height: min(48vw,420px); background:#60a5fa; top:-12%; left:-10%; }
+    .b2 { width: min(44vw,380px); height: min(44vw,380px); background:#a78bfa; top:28%; right:-14%; animation-delay:-5s; }
+    .b3 { width: min(40vw,340px); height: min(40vw,340px); background:#22d3ee; bottom:-14%; left:22%; animation-delay:-9s; }
+    .b4 { width: min(36vw,300px); height: min(36vw,300px); background:#f472b6; top:55%; left:55%; animation-delay:-12s; opacity:0.45; }
+    @keyframes blobFloat {
+      0%,100% { transform: translate(0,0) scale(1); }
+      33% { transform: translate(5%,7%) scale(1.1); }
+      66% { transform: translate(-6%,4%) scale(0.92); }
+    }
+    @media (prefers-reduced-motion: reduce) { .blob { animation: none; } }
+
+    .shell {
+      width: min(440px, calc(100% - 2rem));
+      margin: 1.75rem auto 3rem;
       text-align: center;
-      text-decoration: none;
-      transition: transform 0.2s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
     }
-    .link-btn[data-brand="youtube"] { --brand: 255 0 0; }
-    .link-btn[data-brand="discord"] { --brand: 88 101 242; }
-    .link-btn[data-brand="playstation"] { --brand: 0 55 145; }
-    .link-btn[data-brand="buymeacoffee"] { --brand: 255 221 0; --accent: #ffdd00; }
-    .link-btn[data-brand="apple-music"] { --brand: 250 45 99; }
-    .link-btn[data-brand="church"] { --brand: 201 168 90; }
-    .link-btn[data-brand="robinhood"] { --brand: 0 200 5; }
-    .link-btn[data-brand="briefcase"] { --brand: 90 122 154; }
-    .link-btn[data-brand="cashapp"] { --brand: 0 200 80; }
-    .link-btn-icon {
-      position: absolute;
-      left: 1rem;
-      display: inline-flex;
-      align-items: center;
+    h1 {
+      margin: 0;
+      font-size: 1.85rem;
+      letter-spacing: -0.03em;
+      font-weight: 800;
+    }
+    .bio {
+      margin: 0.55rem 0 1.15rem;
+      color: rgba(11,11,15,0.72);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .social-row {
+      display: flex;
+      flex-wrap: nowrap;
       justify-content: center;
-      width: 1.25rem;
-      height: 1.25rem;
-      color: var(--accent);
-      pointer-events: none;
-    }
-    .link-btn-icon svg {
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
-    .link-btn-label {
-      line-height: 1.3;
-    }
-    .link-btn:hover {
-      transform: translateY(-2px);
-      border-color: rgb(var(--brand) / 0.55);
-      background:
-        linear-gradient(90deg, rgb(var(--brand) / 0.16), transparent 52%),
-        linear-gradient(180deg, #161d2a 0%, #0e131c 100%);
-      box-shadow:
-        inset 3px 0 0 var(--accent),
-        0 0 22px rgb(var(--brand) / 0.22),
-        0 8px 20px rgba(0, 0, 0, 0.35);
-    }
-    .link-btn:active {
-      transform: translateY(0);
-    }
-    html.light .link-btn {
-      background:
-        linear-gradient(90deg, rgb(var(--brand) / 0.08), transparent 42%),
-        linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
-      border: 1px solid rgb(var(--brand) / 0.32);
-      box-shadow: inset 3px 0 0 rgb(var(--brand) / 0.85);
-      color: #0f172a;
-    }
-    html.light .link-btn .link-btn-icon {
-      color: rgb(var(--brand));
-    }
-    html.light .link-btn:hover {
-      background:
-        linear-gradient(90deg, rgb(var(--brand) / 0.14), transparent 50%),
-        linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
-      box-shadow:
-        inset 3px 0 0 rgb(var(--brand)),
-        0 0 18px rgb(var(--brand) / 0.18),
-        0 8px 16px rgba(15, 23, 42, 0.08);
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 1.35rem;
     }
     .social-icon {
       --brand: 59 130 246;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 2rem;
-      height: 2rem;
-      flex: 0 0 2rem;
-      border-radius: 0.55rem;
-      background: rgba(22, 29, 42, 0.9);
-      border: 1px solid rgb(var(--brand) / 0.28);
+      width: 2.15rem;
+      height: 2.15rem;
+      flex: 0 0 2.15rem;
+      border-radius: 0.7rem;
+      text-decoration: none;
       color: rgb(var(--brand));
-      transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+      background: rgba(255,255,255,0.32);
+      border: 1px solid rgb(var(--brand) / 0.35);
+      backdrop-filter: blur(14px) saturate(160%);
+      -webkit-backdrop-filter: blur(14px) saturate(160%);
+      box-shadow: 0 6px 16px rgba(15,23,42,0.06);
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
     }
-    @media (max-width: 360px) {
-      .social-icon {
-        width: 1.55rem;
-        height: 1.55rem;
-        flex-basis: 1.55rem;
-      }
-    }
-    .social-icon svg {
-      display: block;
-      width: 56%;
-      height: 56%;
-    }
+    .social-icon svg { width: 56%; height: 56%; display: block; }
     .social-icon[data-brand="instagram"] { --brand: 225 48 108; }
-    .social-icon[data-brand="x"] { --brand: 231 233 234; }
-    .social-icon[data-brand="threads"] { --brand: 231 233 234; }
+    .social-icon[data-brand="x"] { --brand: 15 20 25; }
+    .social-icon[data-brand="threads"] { --brand: 15 20 25; }
     .social-icon[data-brand="twitch"] { --brand: 145 70 255; }
     .social-icon[data-brand="kick"] { --brand: 83 252 24; }
     .social-icon[data-brand="discord"] { --brand: 88 101 242; }
     .social-icon[data-brand="cashapp"] { --brand: 0 200 80; }
     .social-icon[data-brand="email"] { --brand: 59 130 246; }
     .social-icon:hover {
-      border-color: rgb(var(--brand) / 0.65);
-      box-shadow: 0 0 16px rgb(var(--brand) / 0.35);
-      transform: translateY(-1px);
+      transform: translateY(-2px);
+      border-color: rgb(var(--brand) / 0.7);
+      box-shadow: 0 0 16px rgb(var(--brand) / 0.28);
     }
-    html.light .social-icon {
-      background: rgba(255, 255, 255, 0.9);
-      border-color: rgb(var(--brand) / 0.32);
-    }
-    html.light .social-icon[data-brand="x"],
-    html.light .social-icon[data-brand="threads"] { --brand: 15 20 25; }
-    .theme-toggle {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      z-index: 50;
-      width: 2.75rem;
-      height: 2.75rem;
-      border-radius: 9999px;
-      display: inline-flex;
+
+    .links-stack { display: flex; flex-direction: column; gap: 0.7rem; }
+
+    .link-btn {
+      --brand: 59 130 246;
+      --accent: rgb(var(--brand));
+      position: relative;
+      display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(14, 19, 28, 0.85);
-      border: 1px solid rgba(148, 163, 184, 0.2);
-      color: #94a3b8;
+      width: 100%;
+      min-height: 52px;
+      padding: 0.85rem 2.85rem;
+      border-radius: 16px;
+      text-decoration: none;
+      color: #0b0b0f;
+      font-weight: 650;
+      font-size: 0.96rem;
+      letter-spacing: -0.01em;
+      text-align: center;
+      background:
+        linear-gradient(90deg, rgb(var(--brand) / 0.16), transparent 48%),
+        rgba(255,255,255,0.26);
+      border: 1px solid rgb(var(--brand) / 0.28);
+      box-shadow:
+        inset 3px 0 0 rgb(var(--brand) / 0.9),
+        0 8px 28px rgba(15,23,42,0.08),
+        inset 0 1px 0 rgba(255,255,255,0.55);
+      backdrop-filter: blur(18px) saturate(165%);
+      -webkit-backdrop-filter: blur(18px) saturate(165%);
+      transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+    .link-btn[data-brand="youtube"] { --brand: 255 0 0; }
+    .link-btn[data-brand="discord"] { --brand: 88 101 242; }
+    .link-btn[data-brand="playstation"] { --brand: 0 55 145; }
+    .link-btn[data-brand="buymeacoffee"] { --brand: 255 221 0; }
+    .link-btn[data-brand="apple-music"] { --brand: 250 45 99; }
+    .link-btn[data-brand="church"] { --brand: 201 168 90; }
+    .link-btn[data-brand="robinhood"] { --brand: 0 200 5; }
+    .link-btn[data-brand="briefcase"] { --brand: 90 122 154; }
+    .link-btn[data-brand="cashapp"] { --brand: 0 200 80; }
+
+    .link-btn-icon {
+      position: absolute;
+      left: 1rem;
+      display: inline-flex;
+      width: 1.25rem; height: 1.25rem;
+      color: rgb(var(--brand));
+      pointer-events: none;
+    }
+    .link-btn-icon svg { width: 100%; height: 100%; display: block; }
+    .link-btn-label { line-height: 1.3; }
+
+    .link-btn:hover {
+      transform: translateY(-2px) scale(1.01);
+      background:
+        linear-gradient(90deg, rgb(var(--brand) / 0.24), transparent 55%),
+        rgba(255,255,255,0.4);
+      border-color: rgb(var(--brand) / 0.5);
+      box-shadow:
+        inset 3px 0 0 rgb(var(--brand)),
+        0 0 20px rgb(var(--brand) / 0.18),
+        0 12px 28px rgba(15,23,42,0.1);
+    }
+    .link-btn:active { transform: translateY(0) scale(0.99); }
+
+    .foot {
+      margin-top: 1.5rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: rgba(11,11,15,0.5);
+    }
+
+    html.dark { color-scheme: dark; }
+    html.dark body { color: #f4f6fb; }
+    html.dark .anim-bg {
+      background:
+        radial-gradient(ellipse at 20% 10%, rgba(37,99,235,0.45), transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(124,58,237,0.35), transparent 45%),
+        radial-gradient(ellipse at 50% 90%, rgba(8,145,178,0.3), transparent 50%),
+        linear-gradient(135deg, #05070c 0%, #0b1220 50%, #070910 100%);
+    }
+    html.dark h1 { color: #f8fafc; text-shadow: none; }
+    html.dark .bio, html.dark .foot { color: rgba(226,232,240,0.7); }
+    html.dark .social-icon {
+      background: rgba(15,23,42,0.35);
+      border-color: rgb(var(--brand) / 0.4);
+    }
+    html.dark .link-btn {
+      color: #f8fafc;
+      background:
+        linear-gradient(90deg, rgb(var(--brand) / 0.22), transparent 48%),
+        rgba(15,23,42,0.28);
+      border-color: rgb(var(--brand) / 0.35);
+      box-shadow:
+        inset 3px 0 0 rgb(var(--brand)),
+        0 10px 28px rgba(0,0,0,0.28),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+    html.dark .link-btn:hover {
+      background:
+        linear-gradient(90deg, rgb(var(--brand) / 0.32), transparent 55%),
+        rgba(15,23,42,0.42);
+    }
+    html.dark .social-icon[data-brand="x"],
+    html.dark .social-icon[data-brand="threads"] { --brand: 231 233 234; }
+    .theme-toggle {
+      position: fixed; top: 1rem; right: 1rem; z-index: 50;
+      width: 2.75rem; height: 2.75rem; border-radius: 9999px;
+      display: inline-flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,0.35);
+      border: 1px solid rgba(255,255,255,0.5);
+      color: #334155;
       backdrop-filter: blur(12px);
       cursor: pointer;
-      transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
-    .theme-toggle:hover {
-      color: #3b82f6;
-      border-color: rgba(59, 130, 246, 0.5);
-      box-shadow: 0 0 16px rgba(59, 130, 246, 0.2);
+    html.dark .theme-toggle {
+      background: rgba(14,19,28,0.7);
+      border-color: rgba(148,163,184,0.25);
+      color: #94a3b8;
     }
-    html.light .theme-toggle {
-      background: rgba(255, 255, 255, 0.9);
-      border-color: rgba(15, 23, 42, 0.1);
-      color: #64748b;
-    }
+    .theme-toggle .ico { width: 1.15rem; height: 1.15rem; }
+    .theme-toggle .hidden { display: none; }
   </style>
 </head>
-<body class="antialiased">
-  <div class="ambient" aria-hidden="true">
-    <div class="ambient-wash"></div>
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-    <div class="ambient-vignette"></div>
+<body>
+  <div class="anim-bg" aria-hidden="true">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+    <div class="blob b4"></div>
   </div>
-
   <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle light and dark mode" title="Toggle theme">
-    <svg id="icon-moon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" aria-hidden="true">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-    </svg>
-    <svg id="icon-sun" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" aria-hidden="true">
-      <circle cx="12" cy="12" r="4" />
-      <path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
-    </svg>
+    <svg id="icon-moon" class="ico hidden" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg id="icon-sun" class="ico" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
   </button>
-
-  <main class="relative z-10 mx-auto flex min-h-dvh max-w-md flex-col px-4 py-10 sm:px-6 sm:py-14">
-    <section class="glass-card rounded-3xl px-5 py-8 sm:px-7 sm:py-10">
-      <header class="flex flex-col items-center text-center">
-        <h1 class="font-display text-2xl font-semibold tracking-tight sm:text-3xl">Brice</h1>
-        <p class="mt-2 max-w-sm font-bio text-[0.95rem] leading-relaxed text-mist">
-          🎂 34 | 🇨🇲 → 🇺🇸 Minnesota | 💻 Tech-minded. 🚀 Always evolving.
-        </p>
-      </header>
-
-      <!-- Social icons -->
-      <nav class="mt-7 flex flex-nowrap items-center justify-center gap-1" aria-label="Social links">
+  <main class="shell">
+    <h1>Brice</h1>
+    <p class="bio">🎂 34 | 🇨🇲 → 🇺🇸 Minnesota | 💻 Tech-minded. 🚀 Always evolving.</p>
+<nav class="social-row" aria-label="Social links">
         <a class="social-icon" data-brand="email" href="mailto:supbricenow@gmail.com" title="Email" aria-label="Email">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
         </a>
@@ -427,16 +283,9 @@
           </svg>
         </a>
       </nav>
-
-      <!-- Main links (rendered from JS array) -->
-      <div id="links" class="mt-8 flex flex-col gap-3" role="list"></div>
-    </section>
-
-    <footer class="mt-8 pb-4 text-center font-mono text-xs text-mist/70">
-      © Brice · @supbrice
-    </footer>
+    <div id="links" class="links-stack" role="list"></div>
+    <p class="foot">© Brice · @supbrice</p>
   </main>
-
   <script>
     const icons = {
       youtube: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>',
@@ -474,42 +323,34 @@
       a.className = 'link-btn';
       a.dataset.brand = icon;
       a.setAttribute('role', 'listitem');
-
       const mark = document.createElement('span');
       mark.className = 'link-btn-icon';
       mark.setAttribute('aria-hidden', 'true');
       mark.innerHTML = icons[icon] || icons.church;
-
       const label = document.createElement('span');
       label.className = 'link-btn-label';
       label.textContent = title;
-
       a.append(mark, label);
       container.appendChild(a);
     });
 
-    // Theme: dark default; light via html.light
     const root = document.documentElement;
     const toggle = document.getElementById('theme-toggle');
     const iconSun = document.getElementById('icon-sun');
     const iconMoon = document.getElementById('icon-moon');
-
     function applyTheme(mode) {
       const isLight = mode === 'light';
       root.classList.toggle('light', isLight);
       root.classList.toggle('dark', !isLight);
-      iconSun.classList.toggle('hidden', isLight);
-      iconMoon.classList.toggle('hidden', !isLight);
+      if (iconSun) iconSun.classList.toggle('hidden', isLight);
+      if (iconMoon) iconMoon.classList.toggle('hidden', !isLight);
       try { localStorage.setItem('theme', mode); } catch (_) {}
     }
-
-    let saved = 'dark';
-    try { saved = localStorage.getItem('theme') || 'dark'; } catch (_) {}
-    applyTheme(saved === 'light' ? 'light' : 'dark');
-
-    toggle.addEventListener('click', () => {
-      const next = root.classList.contains('light') ? 'dark' : 'light';
-      applyTheme(next);
+    let saved = 'light';
+    try { saved = localStorage.getItem('theme') || 'light'; } catch (_) {}
+    applyTheme(saved === 'dark' ? 'dark' : 'light');
+    if (toggle) toggle.addEventListener('click', () => {
+      applyTheme(root.classList.contains('light') ? 'dark' : 'light');
     });
   </script>
 </body>
