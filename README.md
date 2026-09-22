@@ -1,6 +1,6 @@
 # Brice Links (`supbrice/links`)
 
-Static Linktree-style page for [@supbrice](https://x.com/supbrice). Dark/light theme, Tailwind CDN, no build step.
+Static Linktree-style page for [@supbrice](https://x.com/supbrice). Light/dark theme, one HTML file, no build step.
 
 ## Files
 
@@ -14,7 +14,7 @@ Static Linktree-style page for [@supbrice](https://x.com/supbrice). Dark/light t
 
 Open `index.html` and change:
 
-1. **Name / bio** — in the `<header>` section near the top of `<main>`.
+1. **Name / bio** — the `<h1>` and `.bio` paragraph near the top of `<main>`.
 2. **Social icons** — the `<nav aria-label="Social links">` block (each `<a>` is one icon, including email).
 3. **Main links** — edit the JavaScript `links` array near the bottom:
 
@@ -27,7 +27,7 @@ const links = [
 
 Add, remove, or reorder objects — they render automatically. Each item takes an `icon` key (`youtube`, `discord`, `apple-music`, `buymeacoffee`, `playstation`, `robinhood`, `church`, `briefcase`). Icons are inline monochrome SVGs (no extra CDN).
 
-4. **Avatar** — replace `web-pfp.png` (keep the same filename, or update the `<img src>`).
+4. **Avatar** — replace `web-pfp.png` and keep that filename. The page uses it as the favicon and `og:image`.
 
 ## Preview locally
 
@@ -71,7 +71,7 @@ git push -u origin main
 
 ## Theme notes
 
-- Default: dark (`html` has class `dark`).
-- Light mode: toggled via the button (top-right); adds `html.light` and persists in `localStorage`.
-- Colors / fonts live in the Tailwind CDN config and a small `<style>` block — match the Brice portfolio (abyss / graphite / steel / mist / accent, Space Grotesk + IBM Plex Mono).
-- Background is a CSS ambient field (drifting blue orbs and a slow wash) behind the existing card. `prefers-reduced-motion: reduce` freezes it to a static gradient. On small screens the third orb is omitted and the card skips backdrop blur so the animation stays light.
+- Default: light. The top-right button toggles `html.light` / `html.dark` and stores the choice in `localStorage`.
+- Layout, type, and the animated background live in the `<style>` block (Inter). No Tailwind and no build step, so GitHub Pages can serve `index.html` from the repo root.
+- Social icons and link buttons keep the existing platform logos. Brand color is set with `--brand` on each `[data-brand]` rule.
+- `prefers-reduced-motion: reduce` stops the background blobs.
