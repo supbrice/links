@@ -3,48 +3,145 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Brice · Links</title>
-  <meta name="description" content="🎂 34 | 🇨🇲 → 🇺🇸 Minnesota | 💻 Tech-minded. 🚀 Always evolving." />
-  <meta property="og:title" content="Brice · Links" />
-  <meta property="og:description" content="🎂 34 | 🇨🇲 → 🇺🇸 Minnesota | 💻 Tech-minded. 🚀 Always evolving." />
+  <title>Hey, I’m Brice — Links</title>
+  <meta name="description" content="Faith first. From Cameroon to the USA. Building a career in IT." />
+  <meta property="og:title" content="Hey, I’m Brice — Links" />
+  <meta property="og:description" content="Faith first. From Cameroon to the USA. Building a career in IT." />
   <meta property="og:image" content="./web-pfp.png" />
   <link rel="icon" href="./web-pfp.png" type="image/png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root { color-scheme: light; }
     * { box-sizing: border-box; }
     html, body { margin: 0; min-height: 100%; }
     body {
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
       color: #0b0b0f;
       background: transparent;
       -webkit-font-smoothing: antialiased;
     }
+    .liquid-svg { position: absolute; width: 0; height: 0; }
     .anim-bg {
       position: fixed; inset: 0; z-index: -1; overflow: hidden;
       background:
-        radial-gradient(ellipse at 20% 10%, rgba(147,197,253,0.55), transparent 50%),
-        radial-gradient(ellipse at 80% 20%, rgba(196,181,253,0.5), transparent 45%),
-        radial-gradient(ellipse at 50% 90%, rgba(103,232,249,0.45), transparent 50%),
-        linear-gradient(135deg, #dbeafe 0%, #f5f3ff 45%, #ecfeff 100%);
+        radial-gradient(ellipse 80% 60% at 15% 0%, rgba(147,197,253,0.55), transparent 55%),
+        radial-gradient(ellipse 70% 50% at 90% 15%, rgba(196,181,253,0.5), transparent 50%),
+        radial-gradient(ellipse 70% 55% at 50% 100%, rgba(103,232,249,0.42), transparent 55%),
+        linear-gradient(145deg, #dbeafe 0%, #eef2ff 40%, #ecfeff 100%);
+    }
+    .liquid-field {
+      position: absolute; inset: -18%;
+      filter: url(#liquid-goo);
+      transform-origin: center;
+      animation: liquidDrift 28s ease-in-out infinite alternate;
+    }
+    .liquid-sheen {
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(255,255,255,0.35), transparent 42%),
+        radial-gradient(circle at 75% 70%, rgba(255,255,255,0.18), transparent 45%);
+      mix-blend-mode: soft-light;
+      animation: sheenShift 18s ease-in-out infinite alternate;
     }
     .blob {
-      position: absolute; border-radius: 50%;
-      filter: blur(52px); opacity: 0.75;
-      animation: blobFloat 16s ease-in-out infinite;
+      position: absolute;
+      border-radius: 42% 58% 60% 40% / 45% 42% 58% 55%;
+      opacity: 0.88;
+      will-change: transform, border-radius;
+      filter: blur(8px);
     }
-    .b1 { width: min(48vw,420px); height: min(48vw,420px); background:#60a5fa; top:-12%; left:-10%; }
-    .b2 { width: min(44vw,380px); height: min(44vw,380px); background:#a78bfa; top:28%; right:-14%; animation-delay:-5s; }
-    .b3 { width: min(40vw,340px); height: min(40vw,340px); background:#22d3ee; bottom:-14%; left:22%; animation-delay:-9s; }
-    .b4 { width: min(36vw,300px); height: min(36vw,300px); background:#f472b6; top:55%; left:55%; animation-delay:-12s; opacity:0.45; }
-    @keyframes blobFloat {
-      0%,100% { transform: translate(0,0) scale(1); }
-      33% { transform: translate(5%,7%) scale(1.1); }
-      66% { transform: translate(-6%,4%) scale(0.92); }
+    .b1 {
+      width: min(58vw, 520px); height: min(58vw, 520px);
+      background: #60a5fa;
+      top: -18%; left: -14%;
+      animation: liquidBlobA 14s ease-in-out infinite;
     }
-    @media (prefers-reduced-motion: reduce) { .blob { animation: none; } }
+    .b2 {
+      width: min(52vw, 460px); height: min(52vw, 460px);
+      background: #a78bfa;
+      top: 18%; right: -18%;
+      animation: liquidBlobB 18s ease-in-out infinite;
+      animation-delay: -4s;
+    }
+    .b3 {
+      width: min(48vw, 420px); height: min(48vw, 420px);
+      background: #22d3ee;
+      bottom: -20%; left: 12%;
+      animation: liquidBlobC 16s ease-in-out infinite;
+      animation-delay: -8s;
+    }
+    .b4 {
+      width: min(42vw, 360px); height: min(42vw, 360px);
+      background: #f472b6;
+      top: 48%; left: 48%;
+      opacity: 0.72;
+      animation: liquidBlobA 20s ease-in-out infinite reverse;
+      animation-delay: -11s;
+    }
+    .b5 {
+      width: min(36vw, 300px); height: min(36vw, 300px);
+      background: #34d399;
+      top: 35%; left: 30%;
+      opacity: 0.55;
+      animation: liquidBlobB 22s ease-in-out infinite;
+      animation-delay: -6s;
+    }
+    @keyframes liquidDrift {
+      0% { transform: translate3d(-1.5%, -1%, 0) scale(1.02); }
+      100% { transform: translate3d(2%, 1.5%, 0) scale(1.08); }
+    }
+    @keyframes sheenShift {
+      0% { opacity: 0.55; transform: translate3d(0,0,0); }
+      100% { opacity: 0.85; transform: translate3d(-2%, 2%, 0); }
+    }
+    @keyframes liquidBlobA {
+      0%, 100% {
+        transform: translate3d(0,0,0) scale(1) rotate(0deg);
+        border-radius: 42% 58% 60% 40% / 45% 42% 58% 55%;
+      }
+      25% {
+        transform: translate3d(8%, 6%, 0) scale(1.12) rotate(4deg);
+        border-radius: 60% 40% 35% 65% / 55% 50% 50% 45%;
+      }
+      50% {
+        transform: translate3d(-4%, 10%, 0) scale(0.94) rotate(-3deg);
+        border-radius: 38% 62% 55% 45% / 60% 38% 62% 40%;
+      }
+      75% {
+        transform: translate3d(6%, -5%, 0) scale(1.08) rotate(2deg);
+        border-radius: 55% 45% 48% 52% / 40% 60% 40% 60%;
+      }
+    }
+    @keyframes liquidBlobB {
+      0%, 100% {
+        transform: translate3d(0,0,0) scale(1.05) rotate(0deg);
+        border-radius: 55% 45% 42% 58% / 48% 52% 48% 52%;
+      }
+      33% {
+        transform: translate3d(-9%, 5%, 0) scale(1.16) rotate(-5deg);
+        border-radius: 40% 60% 65% 35% / 55% 40% 60% 45%;
+      }
+      66% {
+        transform: translate3d(5%, -8%, 0) scale(0.9) rotate(6deg);
+        border-radius: 62% 38% 48% 52% / 42% 58% 42% 58%;
+      }
+    }
+    @keyframes liquidBlobC {
+      0%, 100% {
+        transform: translate3d(0,0,0) scale(1) rotate(0deg);
+        border-radius: 48% 52% 58% 42% / 50% 45% 55% 50%;
+      }
+      40% {
+        transform: translate3d(7%, -7%, 0) scale(1.14) rotate(7deg);
+        border-radius: 35% 65% 40% 60% / 60% 35% 65% 40%;
+      }
+      70% {
+        transform: translate3d(-6%, 4%, 0) scale(0.96) rotate(-4deg);
+        border-radius: 58% 42% 52% 48% / 45% 55% 45% 55%;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .blob, .liquid-field, .liquid-sheen { animation: none !important; }
+    }
 
     .shell {
       width: min(440px, calc(100% - 2rem));
@@ -58,10 +155,31 @@
       font-weight: 800;
     }
     .bio {
-      margin: 0.55rem 0 1.15rem;
+      margin: 0.55rem 0 1.25rem;
       color: rgba(11,11,15,0.72);
       font-size: 0.95rem;
       font-weight: 500;
+    }
+    .bio-story {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      text-align: center;
+      line-height: 1.45;
+    }
+    .bio-story p {
+      margin: 0;
+    }
+    .bio-story .bio-cta {
+      margin-top: 0.45rem;
+      font-weight: 650;
+      color: rgba(11,11,15,0.82);
+    }
+    [data-theme="dark"] .bio {
+      color: rgba(232,238,248,0.78);
+    }
+    [data-theme="dark"] .bio-story .bio-cta {
+      color: rgba(232,238,248,0.9);
     }
 
     .social-row {
@@ -180,14 +298,37 @@
 </head>
 <body>
   <div class="anim-bg" aria-hidden="true">
-    <div class="blob b1"></div>
-    <div class="blob b2"></div>
-    <div class="blob b3"></div>
-    <div class="blob b4"></div>
+    <div class="liquid-field">
+      <div class="blob b1"></div>
+      <div class="blob b2"></div>
+      <div class="blob b3"></div>
+      <div class="blob b4"></div>
+      <div class="blob b5"></div>
+    </div>
+    <div class="liquid-sheen"></div>
   </div>
-  <main class="shell">
-    <h1>Brice</h1>
-    <p class="bio">🎂 34 | 🇨🇲 → 🇺🇸 Minnesota | 💻 Tech-minded. 🚀 Always evolving.</p>
+  <svg class="liquid-svg" aria-hidden="true" width="0" height="0">
+    <defs>
+      <filter id="liquid-goo" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="18" result="blur" />
+        <feColorMatrix in="blur" mode="matrix"
+          values="1 0 0 0 0
+                  0 1 0 0 0
+                  0 0 1 0 0
+                  0 0 0 28 -12" result="goo" />
+        <feBlend in="SourceGraphic" in2="goo" />
+      </filter>
+    </defs>
+  </svg>
+<main class="shell">
+    <h1>Hey, I’m Brice 👋🏾</h1>
+    <div class="bio bio-story">
+      <p>✝️ Faith first | Overflow Church</p>
+      <p>🇨🇲 From Cameroon to the 🇺🇸 USA</p>
+      <p>😊 Curious by nature, and I Love to make people smile</p>
+      <p>💻 Building my career in IT &amp; solving real tech problems.</p>
+      <p class="bio-cta">🔗 Explore my world below.</p>
+    </div>
 <nav class="social-row" aria-label="Social links">
         <a class="social-icon" data-brand="email" href="mailto:supbricenow@gmail.com" title="Email" aria-label="Email">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
