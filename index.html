@@ -3,12 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hey, I’m Brice — Links</title>
-  <meta name="description" content="Faith first. From Cameroon to the USA. Building a career in IT." />
-  <meta property="og:title" content="Hey, I’m Brice — Links" />
-  <meta property="og:description" content="Faith first. From Cameroon to the USA. Building a career in IT." />
-  <meta property="og:image" content="./web-pfp.png" />
-  <link rel="icon" href="./web-pfp.png" type="image/png" />
+  <title>Brice 🎂 34 — Links</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <style>
     :root { color-scheme: light; }
     * { box-sizing: border-box; }
@@ -21,129 +17,38 @@
     }
     .liquid-svg { position: absolute; width: 0; height: 0; }
     .anim-bg {
-      position: fixed; inset: 0; z-index: -1; overflow: hidden;
+      position: fixed; inset: 0; z-index: 0; overflow: hidden;
+      pointer-events: none;
+      background: #1a1a22;
+    }
+    .photo-bg {
+      position: absolute; inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #e8e2d8;
+    }
+    .photo-bg img {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      object-position: center center;
+      display: block;
+    }
+    .photo-veil {
+      position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse 80% 60% at 15% 0%, rgba(147,197,253,0.55), transparent 55%),
-        radial-gradient(ellipse 70% 50% at 90% 15%, rgba(196,181,253,0.5), transparent 50%),
-        radial-gradient(ellipse 70% 55% at 50% 100%, rgba(103,232,249,0.42), transparent 55%),
-        linear-gradient(145deg, #dbeafe 0%, #eef2ff 40%, #ecfeff 100%);
-    }
-    .liquid-field {
-      position: absolute; inset: -18%;
-      filter: url(#liquid-goo);
-      transform-origin: center;
-      animation: liquidDrift 28s ease-in-out infinite alternate;
-    }
-    .liquid-sheen {
-      position: absolute; inset: 0; pointer-events: none;
-      background:
-        radial-gradient(circle at 30% 20%, rgba(255,255,255,0.35), transparent 42%),
-        radial-gradient(circle at 75% 70%, rgba(255,255,255,0.18), transparent 45%);
-      mix-blend-mode: soft-light;
-      animation: sheenShift 18s ease-in-out infinite alternate;
-    }
-    .blob {
-      position: absolute;
-      border-radius: 42% 58% 60% 40% / 45% 42% 58% 55%;
-      opacity: 0.88;
-      will-change: transform, border-radius;
-      filter: blur(8px);
-    }
-    .b1 {
-      width: min(58vw, 520px); height: min(58vw, 520px);
-      background: #60a5fa;
-      top: -18%; left: -14%;
-      animation: liquidBlobA 14s ease-in-out infinite;
-    }
-    .b2 {
-      width: min(52vw, 460px); height: min(52vw, 460px);
-      background: #a78bfa;
-      top: 18%; right: -18%;
-      animation: liquidBlobB 18s ease-in-out infinite;
-      animation-delay: -4s;
-    }
-    .b3 {
-      width: min(48vw, 420px); height: min(48vw, 420px);
-      background: #22d3ee;
-      bottom: -20%; left: 12%;
-      animation: liquidBlobC 16s ease-in-out infinite;
-      animation-delay: -8s;
-    }
-    .b4 {
-      width: min(42vw, 360px); height: min(42vw, 360px);
-      background: #f472b6;
-      top: 48%; left: 48%;
-      opacity: 0.72;
-      animation: liquidBlobA 20s ease-in-out infinite reverse;
-      animation-delay: -11s;
-    }
-    .b5 {
-      width: min(36vw, 300px); height: min(36vw, 300px);
-      background: #34d399;
-      top: 35%; left: 30%;
-      opacity: 0.55;
-      animation: liquidBlobB 22s ease-in-out infinite;
-      animation-delay: -6s;
-    }
-    @keyframes liquidDrift {
-      0% { transform: translate3d(-1.5%, -1%, 0) scale(1.02); }
-      100% { transform: translate3d(2%, 1.5%, 0) scale(1.08); }
-    }
-    @keyframes sheenShift {
-      0% { opacity: 0.55; transform: translate3d(0,0,0); }
-      100% { opacity: 0.85; transform: translate3d(-2%, 2%, 0); }
-    }
-    @keyframes liquidBlobA {
-      0%, 100% {
-        transform: translate3d(0,0,0) scale(1) rotate(0deg);
-        border-radius: 42% 58% 60% 40% / 45% 42% 58% 55%;
-      }
-      25% {
-        transform: translate3d(8%, 6%, 0) scale(1.12) rotate(4deg);
-        border-radius: 60% 40% 35% 65% / 55% 50% 50% 45%;
-      }
-      50% {
-        transform: translate3d(-4%, 10%, 0) scale(0.94) rotate(-3deg);
-        border-radius: 38% 62% 55% 45% / 60% 38% 62% 40%;
-      }
-      75% {
-        transform: translate3d(6%, -5%, 0) scale(1.08) rotate(2deg);
-        border-radius: 55% 45% 48% 52% / 40% 60% 40% 60%;
-      }
-    }
-    @keyframes liquidBlobB {
-      0%, 100% {
-        transform: translate3d(0,0,0) scale(1.05) rotate(0deg);
-        border-radius: 55% 45% 42% 58% / 48% 52% 48% 52%;
-      }
-      33% {
-        transform: translate3d(-9%, 5%, 0) scale(1.16) rotate(-5deg);
-        border-radius: 40% 60% 65% 35% / 55% 40% 60% 45%;
-      }
-      66% {
-        transform: translate3d(5%, -8%, 0) scale(0.9) rotate(6deg);
-        border-radius: 62% 38% 48% 52% / 42% 58% 42% 58%;
-      }
-    }
-    @keyframes liquidBlobC {
-      0%, 100% {
-        transform: translate3d(0,0,0) scale(1) rotate(0deg);
-        border-radius: 48% 52% 58% 42% / 50% 45% 55% 50%;
-      }
-      40% {
-        transform: translate3d(7%, -7%, 0) scale(1.14) rotate(7deg);
-        border-radius: 35% 65% 40% 60% / 60% 35% 65% 40%;
-      }
-      70% {
-        transform: translate3d(-6%, 4%, 0) scale(0.96) rotate(-4deg);
-        border-radius: 58% 42% 52% 48% / 45% 55% 45% 55%;
-      }
+        linear-gradient(180deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.28) 28%, rgba(255,255,255,0.22) 58%, rgba(255,255,255,0.42) 100%);
     }
     @media (prefers-reduced-motion: reduce) {
-      .blob, .liquid-field, .liquid-sheen { animation: none !important; }
+      .photo-bg img { }
     }
 
     .shell {
+      position: relative;
+      z-index: 1;
       width: min(440px, calc(100% - 2rem));
       margin: 1.75rem auto 3rem;
       text-align: center;
@@ -298,37 +203,17 @@
 </head>
 <body>
   <div class="anim-bg" aria-hidden="true">
-    <div class="liquid-field">
-      <div class="blob b1"></div>
-      <div class="blob b2"></div>
-      <div class="blob b3"></div>
-      <div class="blob b4"></div>
-      <div class="blob b5"></div>
-    </div>
-    <div class="liquid-sheen"></div>
+    <div class="photo-bg"><img src="assets/lt-bg-portrait.jpg" alt="" /></div>
+    <div class="photo-veil"></div>
   </div>
-  <svg class="liquid-svg" aria-hidden="true" width="0" height="0">
-    <defs>
-      <filter id="liquid-goo" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur in="SourceGraphic" stdDeviation="18" result="blur" />
-        <feColorMatrix in="blur" mode="matrix"
-          values="1 0 0 0 0
-                  0 1 0 0 0
-                  0 0 1 0 0
-                  0 0 0 28 -12" result="goo" />
-        <feBlend in="SourceGraphic" in2="goo" />
-      </filter>
-    </defs>
-  </svg>
 <main class="shell">
-    <h1>Hey, I’m Brice 👋🏾</h1>
+    <h1>Brice 🎂 34</h1>
     <div class="bio bio-story">
-      <p>🎂 34</p>
-      <p>✝️ Faith first | Overflow Church</p>
-      <p>🇨🇲 From Cameroon to the 🇺🇸 USA</p>
-      <p>😊 Curious by nature, and I Love to make people smile</p>
-      <p>💻 Building my career in IT &amp; solving real tech problems.</p>
-      <p class="bio-cta">🔗 Explore my world below.</p>
+      <p>✝️ Growing Faith @Overflow Church ⛪️</p>
+      <p>🇨🇲 Originally to the 🇺🇸 6+ years 🤔</p>
+      <p>💻 IT Professional in the making 🦾</p>
+      <p>😊 Curious by nature &amp; Love Laughs 😂</p>
+      <p class="bio-cta">🔗 Explore my world below!</p>
     </div>
 <nav class="social-row" aria-label="Social links">
         <a class="social-icon" data-brand="email" href="mailto:supbricenow@gmail.com" title="Email" aria-label="Email">
@@ -371,7 +256,7 @@
         </a>
       </nav>
     <div id="links" class="links-stack" role="list"></div>
-    <p class="foot">© Brice · @supbrice</p>
+    <p class="foot">Links · glass over portrait</p>
   </main>
   <script>
     const icons = {
